@@ -35,11 +35,12 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.util.StringUtils;
 
 /**
- * Simple implementation of {@link EnvironmentRepository} that is backed by
- * MongoDB. The resulting Environment is composed of property sources located
- * using the application name as the MongoDB collection while MongoDB document's
- * 'profile' and 'label' key values represent the Spring profile and label
- * respectively.
+ * Implementation of {@link EnvironmentRepository} that is backed by MongoDB. The
+ * resulting {@link Environment} is composed of property sources where the
+ * {@literal application-name} is identified by the collection's {@literal name} and a
+ * MongoDB document's {@literal profile} and {@literal label} values represent the Spring
+ * application's {@literal profile} and {@literal label} respectively. All properties must
+ * be listed under the {@literal source} key of the document.
  *
  * @author Venil Noronha
  */

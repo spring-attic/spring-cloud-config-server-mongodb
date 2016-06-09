@@ -1,21 +1,53 @@
 # Spring Cloud Config Server MongoDB
 Spring Cloud Config Server MongoDB enables seamless integration of the regular Spring Cloud Config Server with MongoDB to manage external properties for applications across all environments.
 
-# Configuration
-Just add `@EnableMongoConfigServer` to your `@Configuration` class and set up basic `spring.data.mongodb.*` properties for your Spring Boot application and you're ready to go. Properties stored in MongoDB will have their `application-name` determined by the collection's name, while 'profile' and 'label' key values of a MongoDB Document would represent the Spring `profile` and `label` respectively.
-
-MongoDB properties for an application named `gateway` would have the properties stored as a document in a collection named 'gateway'. A sample properties document could look as below.
+# Quick Start
+Create a standard Spring Boot application, like this:
 
 ```
-label: master
-profile: prod
-users: {
-  max-connections: 1,
-  block-time-ms: 3600
+@SpringBootApplication
+@EnableMongoConfigServer
+public class Application {
+
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
+
 }
 ```
 
-You could then access the properties by invoking the `http://localhost:8888/master/gateway-prod.properties`.
+Configure the application's `spring.data.mongodb.*` properties in `application.yml`, like this:
+```
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost/config-db
+```
+
+Add documents to the `config-db` mongo database, like this:
+```
+use config-db;
+
+db.gateway.insert({
+  "label": "master",
+  "profile": "prod",
+  "source": {
+    "user": {
+      "max-connections": 1,
+      "timeout-ms": 3600
+    }
+  }
+});
+```
+In the above snippet we've configured properties for an application named `gateway` having profile `prod` and label `master`.
+
+The `application-name` is identified by the collection's `name` and a MongoDB document's `profile` and `label` values represent the Spring application's `profile` and `label` respectively. Note that documents with no `profile` or `label` values will have them considered `default`. All properties must be listed under the `source` key of the document.
+
+Finally, access these properties by invoking `http://localhost:8080/master/gateway-prod.properties`. The response would be like this:
+```
+user.max-connections: 1.0
+user.timeout-ms: 3600.0
+```
 
 # References
 [spring-cloud-config](https://github.com/spring-cloud/spring-cloud-config)

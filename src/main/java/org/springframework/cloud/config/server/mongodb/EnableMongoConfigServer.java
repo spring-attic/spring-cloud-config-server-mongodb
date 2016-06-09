@@ -31,6 +31,7 @@ import org.springframework.context.annotation.Import;
  * Server backed by MongoDB.
  * 
  * @author Venil Noronha
+ * @see EnableConfigServer
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
