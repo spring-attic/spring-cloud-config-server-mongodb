@@ -46,9 +46,7 @@ public class MongoEnvironmentRepositoryConfiguration {
 	@Bean
 	@Primary
 	public EnvironmentRepository environmentRepository() {
-		MongoEnvironmentRepository mongoEnvironmentRepository = new MongoEnvironmentRepository();
-		mongoEnvironmentRepository.setMongoTemplate(mongoTemplate);
-		return mongoEnvironmentRepository;
+		return new MongoEnvironmentRepository(mongoTemplate);
 	}
 
 }

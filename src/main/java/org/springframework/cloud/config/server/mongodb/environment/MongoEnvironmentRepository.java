@@ -55,7 +55,7 @@ public class MongoEnvironmentRepository implements EnvironmentRepository {
 	private MongoTemplate mongoTemplate;
 	private MapFlattener mapFlattener;
 
-	public void setMongoTemplate(MongoTemplate mongoTemplate) {
+	public MongoEnvironmentRepository(MongoTemplate mongoTemplate) {
 		this.mongoTemplate = mongoTemplate;
 		this.mapFlattener = new MapFlattener();
 	}
