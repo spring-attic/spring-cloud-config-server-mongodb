@@ -1,0 +1,15 @@
+sudo: false
+
+cache:
+  directories:
+  - $HOME/.m2
+
+language: java
+
+jdk:
+- oraclejdk7
+
+install:
+  - ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+
+script: ./mvnw clean verify
