@@ -9,6 +9,8 @@ language: java
 jdk:
 - oraclejdk7
 
+services: mongodb
+
 install:
   - ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 
