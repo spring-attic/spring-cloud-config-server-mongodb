@@ -1,4 +1,6 @@
 # Spring Cloud Config Server MongoDB
+![build-status](https://travis-ci.org/spring-cloud-incubator/spring-cloud-config-server-mongodb.svg?branch=master)
+
 Spring Cloud Config Server MongoDB enables seamless integration of the regular Spring Cloud Config Server with MongoDB to manage external properties for applications across all environments.
 
 # Quick Start
