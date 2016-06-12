@@ -5,41 +5,15 @@
 
 	<servers>
 		<server>
+			<id>ojo-central</id>
 			<username>${env.OJO_USERNAME}</username>
 			<password>${env.OJO_PASSWORD}</password>
-			<id>central</id>
 		</server>
 		<server>
+			<id>ojo-snapshots</id>
 			<username>${env.OJO_USERNAME}</username>
 			<password>${env.OJO_PASSWORD}</password>
-			<id>snapshots</id>
 		</server>
 	</servers>
-
-	<profiles>
-		<profile>
-			<id>artifactory</id>
-			<repositories>
-				<repository>
-					<snapshots>
-						<enabled>false</enabled>
-					</snapshots>
-					<id>central</id>
-					<name>libs-release</name>
-					<url>https://oss.jfrog.org/artifactory/libs-release</url>
-				</repository>
-				<repository>
-					<snapshots />
-					<id>snapshots</id>
-					<name>libs-snapshot</name>
-					<url>https://oss.jfrog.org/artifactory/libs-snapshot</url>
-				</repository>
-			</repositories>
-		</profile>
-	</profiles>
-
-	<activeProfiles>
-		<activeProfile>artifactory</activeProfile>
-	</activeProfiles>
 
 </settings>
