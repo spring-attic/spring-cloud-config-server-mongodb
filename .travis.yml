@@ -9,7 +9,7 @@ services: mongodb
 install:
 - ./mvnw clean install -DskipTests=true -Dmaven.javadoc.skip=true -B -V -U
 script:
-- '[ "${TRAVIS_BRANCH}" = master ] && [ "${TRAVIS_PULL_REQUEST}" != "false" ] || ./mvnw -s ./.settings.xml clean verify deploy'
+- '[ "${TRAVIS_BRANCH}" = master ] && [ "${TRAVIS_PULL_REQUEST}" != "false" ] || ./mvnw -s .settings.xml clean verify deploy'
 - '[ "${TRAVIS_PULL_REQUEST}" = "false" ] || ./mvnw clean verify'
 env:
   global:
