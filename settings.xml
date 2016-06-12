@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings
+	xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.1.0 http://maven.apache.org/xsd/settings-1.1.0.xsd"
+	xmlns="http://maven.apache.org/SETTINGS/1.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<servers>
+		<server>
+			<username>${env.OJO_USERNAME}</username>
+			<password>${env.OJO_PASSWORD}</password>
+			<id>central</id>
+		</server>
+		<server>
+			<username>${env.OJO_USERNAME}</username>
+			<password>${env.OJO_PASSWORD}</password>
+			<id>snapshots</id>
+		</server>
+	</servers>
+
+	<profiles>
+		<profile>
+			<id>artifactory</id>
+			<repositories>
+				<repository>
+					<snapshots>
+						<enabled>false</enabled>
+					</snapshots>
+					<id>central</id>
+					<name>libs-release</name>
+					<url>https://oss.jfrog.org/artifactory/libs-release</url>
+				</repository>
+				<repository>
+					<snapshots />
+					<id>snapshots</id>
+					<name>libs-snapshot</name>
+					<url>https://oss.jfrog.org/artifactory/libs-snapshot</url>
+				</repository>
+			</repositories>
+		</profile>
+	</profiles>
+
+	<activeProfiles>
+		<activeProfile>artifactory</activeProfile>
+	</activeProfiles>
+
+</settings>
