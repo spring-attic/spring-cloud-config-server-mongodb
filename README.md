@@ -6,8 +6,29 @@
 Spring Cloud Config Server MongoDB enables seamless integration of the regular Spring Cloud Config Server with MongoDB to manage external properties for applications across all environments.
 
 # Quick Start
-Create a standard Spring Boot application, like this:
+Configure pom.xml, like this:
+```
+<dependencies>
+    <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-config-server-mongodb</artifactId>
+        <version>0.0.1.BUILD-SNAPSHOT</version>
+    </dependency>
+</dependencies>
 
+<repositories>
+	<repository>
+		<id>ojo-snapshots</id>
+		<name>OJO Snapshots</name>
+		<url>https://oss.jfrog.org/artifactory/libs-snapshot</url>
+		<snapshots>
+			<enabled>true</enabled>
+		</snapshots>
+	</repository>
+</repositories>
+```
+
+Create a standard Spring Boot application, like this:
 ```
 @SpringBootApplication
 @EnableMongoConfigServer
