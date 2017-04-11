@@ -17,14 +17,22 @@ Configure pom.xml, like this:
 </dependencies>
 
 <repositories>
-	<repository>
-		<id>ojo-snapshots</id>
-		<name>OJO Snapshots</name>
-		<url>https://oss.jfrog.org/artifactory/libs-snapshot</url>
-		<snapshots>
-			<enabled>true</enabled>
-		</snapshots>
-	</repository>
+    <repository>
+        <id>spring-snapshots</id>
+        <name>Spring Snapshots</name>
+        <url>https://repo.spring.io/libs-snapshot-local</url>
+        <snapshots>
+            <enabled>true</enabled>
+        </snapshots>
+    </repository>
+    <repository>
+        <id>ojo-snapshots</id>
+        <name>OJO Snapshots</name>
+        <url>https://oss.jfrog.org/artifactory/libs-snapshot</url>
+        <snapshots>
+            <enabled>true</enabled>
+        </snapshots>
+    </repository>
 </repositories>
 ```
 
