@@ -84,7 +84,7 @@ public class MongoEnvironmentRepository implements EnvironmentRepository {
 			List<MongoPropertySource> sources = mongoTemplate.find(query, MongoPropertySource.class, name);
 			sortSourcesByLabel(sources, labels);
 			sortSourcesByProfile(sources, profiles);
-			environment = new Environment(name, profilesArr, label, null);
+			environment = new Environment(name, profilesArr, label, null, null);
 			for (MongoPropertySource propertySource : sources) {
 				String sourceName = generateSourceName(name, propertySource);
 				Map<String, Object> flatSource = mapFlattener.flatten(propertySource.getSource());
