@@ -93,7 +93,9 @@ user.timeout-ms: 3600.0
 # References
 [spring-cloud-config](https://github.com/spring-cloud/spring-cloud-config)
 
-# Current Issue
+# Stack Overflow Questions
+
+https://stackoverflow.com/questions/44078867/how-do-you-write-a-spring-cloud-config-server-with-spring-boot-1-5-3-release-a
 
 I modified the spring-cloud-config-server-mongodb project to use the latest version of Spring Boot (1.5.3.RELEASE) and  Spring Cloud Config (1.3.0.RELEASE).
 I also introduced the class MongoConfigServer that runs the mongo db config server.
