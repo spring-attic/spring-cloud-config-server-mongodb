@@ -119,5 +119,15 @@ I am using this Mongo DB Config Server as an example for writing a different Con
 
 My fork of spring-cloud-config-server-mongodb is available at [https://github.com/minmay/spring-cloud-config-server-mongodb.git](https://github.com/minmay/spring-cloud-config-server-mongodb.git)
 
+## Answer
+
+I fixed this issue by updating [https://github.com/minmay/spring-cloud-config-server-mongodb/blob/master/src/main/java/org/springframework/cloud/config/server/mongodb/config/MongoEnvironmentRepositoryConfiguration.java](https://github.com/minmay/spring-cloud-config-server-mongodb/blob/master/src/main/java/org/springframework/cloud/config/server/mongodb/config/MongoEnvironmentRepositoryConfiguration.java).
+ 
+What I did was I removed the searchPathLocator bean, and removed the primary annotation from environmentRepository.
+
+I guess Spring Cloud Config was updated to conditionally find an environmentRepository bean.
+ 
+ 
+
 
 
