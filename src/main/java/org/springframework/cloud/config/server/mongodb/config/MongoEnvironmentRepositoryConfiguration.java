@@ -33,18 +33,9 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 public class MongoEnvironmentRepositoryConfiguration {
 
 	@Autowired
-	private ConfigurableEnvironment environment;
-
-	@Autowired
 	private MongoTemplate mongoTemplate;
 
 	@Bean
-	public SearchPathLocator searchPathLocator() {
-		return new NativeEnvironmentRepository(environment);
-	}
-
-	@Bean
-	@Primary
 	public EnvironmentRepository environmentRepository() {
 		return new MongoEnvironmentRepository(mongoTemplate);
 	}
