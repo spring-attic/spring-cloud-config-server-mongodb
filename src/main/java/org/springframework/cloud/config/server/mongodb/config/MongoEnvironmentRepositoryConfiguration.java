@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2016 the original author or authors.
+ * Copyright 2015-2017 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,13 +17,9 @@ package org.springframework.cloud.config.server.mongodb.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.config.server.environment.EnvironmentRepository;
-import org.springframework.cloud.config.server.environment.NativeEnvironmentRepository;
-import org.springframework.cloud.config.server.environment.SearchPathLocator;
 import org.springframework.cloud.config.server.mongodb.environment.MongoEnvironmentRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
-import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.data.mongodb.core.MongoTemplate;
 
 /**
@@ -33,18 +29,9 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 public class MongoEnvironmentRepositoryConfiguration {
 
 	@Autowired
-	private ConfigurableEnvironment environment;
-
-	@Autowired
 	private MongoTemplate mongoTemplate;
 
 	@Bean
-	public SearchPathLocator searchPathLocator() {
-		return new NativeEnvironmentRepository(environment);
-	}
-
-	@Bean
-	@Primary
 	public EnvironmentRepository environmentRepository() {
 		return new MongoEnvironmentRepository(mongoTemplate);
 	}
