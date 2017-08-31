@@ -8,7 +8,7 @@ Spring Cloud Config Server MongoDB enables seamless integration of the regular S
 
 # Quick Start
 Configure pom.xml, like this:
-```
+```xml
 <dependencies>
     <dependency>
         <groupId>org.springframework.cloud</groupId>
@@ -38,7 +38,7 @@ Configure pom.xml, like this:
 ```
 
 Create a standard Spring Boot application, like this:
-```
+```java
 @SpringBootApplication
 @EnableMongoConfigServer
 public class Application {
@@ -51,7 +51,7 @@ public class Application {
 ```
 
 Configure the application's `spring.data.mongodb.*` properties in `application.yml`, like this:
-```
+```yaml
 spring:
   data:
     mongodb:
@@ -59,7 +59,7 @@ spring:
 ```
 
 Add documents to the `config-db` mongo database, like this:
-```
+```javascript
 use config-db;
 
 db.gateway.insert({
@@ -78,7 +78,7 @@ In the above snippet we've configured properties for an application named `gatew
 The `application-name` is identified by the collection's `name` and a MongoDB document's `profile` and `label` values represent the Spring application's `profile` and `label` respectively. Note that documents with no `profile` or `label` values will have them considered `default`. All properties must be listed under the `source` key of the document.
 
 Finally, access these properties by invoking `http://localhost:8080/master/gateway-prod.properties`. The response would be like this:
-```
+```json
 user.max-connections: 1.0
 user.timeout-ms: 3600.0
 ```
