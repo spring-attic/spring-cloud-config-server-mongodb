@@ -2,7 +2,6 @@
 
 [![build-status](https://travis-ci.org/spring-cloud-incubator/spring-cloud-config-server-mongodb.svg?branch=master)](https://travis-ci.org/spring-cloud-incubator/spring-cloud-config-server-mongodb)
 [![Join the chat at https://gitter.im/spring-cloud-incubator/spring-cloud-config-server-mongodb](https://badges.gitter.im/spring-cloud-incubator/spring-cloud-config-server-mongodb.svg)](https://gitter.im/spring-cloud-incubator/spring-cloud-config-server-mongodb?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![GitHub (pre-)release](https://img.shields.io/badge/release-v0.0.1.BUILD--SNAPSHOT-blue.svg)](https://github.com/spring-cloud-incubator/spring-cloud-config-server-mongodb/releases/tag/0.0.1.BUILD-SNAPSHOT)
 
 Spring Cloud Config Server MongoDB enables seamless integration of the regular Spring Cloud Config Server with MongoDB to manage external properties for applications across all environments.
 
