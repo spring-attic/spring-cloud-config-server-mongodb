@@ -25,7 +25,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import org.springframework.boot.autoconfigure.PropertyPlaceholderAutoConfiguration;
+import org.springframework.boot.WebApplicationType;
+import org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration;
 import org.springframework.boot.autoconfigure.data.mongo.MongoDataAutoConfiguration;
 import org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -62,7 +63,7 @@ public class MongoEnvironmentRepositoryTests {
 		// Prepare context
 		Map<String, Object> props = new HashMap<>();
 		props.put("spring.data.mongodb.database", "testdb");
-		context = new SpringApplicationBuilder(TestConfiguration.class).web(false).properties(props).run();
+		context = new SpringApplicationBuilder(TestConfiguration.class).web(WebApplicationType.NONE).properties(props).run();
 		// Prepare test
 		MongoTemplate mongoTemplate = this.context.getBean(MongoTemplate.class);
 		mongoTemplate.dropCollection("testapp");
@@ -83,7 +84,7 @@ public class MongoEnvironmentRepositoryTests {
 		// Prepare context
 		Map<String, Object> props = new HashMap<>();
 		props.put("spring.data.mongodb.database", "testdb");
-		context = new SpringApplicationBuilder(TestConfiguration.class).web(false).properties(props).run();
+		context = new SpringApplicationBuilder(TestConfiguration.class).web(WebApplicationType.NONE).properties(props).run();
 		// Prepare test
 		MongoTemplate mongoTemplate = this.context.getBean(MongoTemplate.class);
 		mongoTemplate.dropCollection("testapp");
@@ -106,7 +107,7 @@ public class MongoEnvironmentRepositoryTests {
 		// Prepare context
 		Map<String, Object> props = new HashMap<>();
 		props.put("spring.data.mongodb.database", "testdb");
-		context = new SpringApplicationBuilder(TestConfiguration.class).web(false).properties(props).run();
+		context = new SpringApplicationBuilder(TestConfiguration.class).web(WebApplicationType.NONE).properties(props).run();
 		// Prepare test
 		MongoTemplate mongoTemplate = this.context.getBean(MongoTemplate.class);
 		mongoTemplate.dropCollection("testapp");
