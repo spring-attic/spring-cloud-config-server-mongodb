@@ -5,7 +5,7 @@
 
 	<groupId>org.springframework.cloud</groupId>
 	<artifactId>spring-cloud-config-server-mongodb</artifactId>
-	<version>0.0.2.BUILD-SNAPSHOT</version>
+	<version>0.0.3.BUILD-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>spring-cloud-config-server-mongodb</name>
