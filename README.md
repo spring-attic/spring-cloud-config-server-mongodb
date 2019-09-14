@@ -12,7 +12,7 @@ Configure pom.xml, like this:
     <dependency>
         <groupId>org.springframework.cloud</groupId>
         <artifactId>spring-cloud-config-server-mongodb</artifactId>
-        <version>0.0.3.BUILD-SNAPSHOT</version>
+        <version>1.0.0.BUILD-SNAPSHOT</version>
     </dependency>
 </dependencies>
 
