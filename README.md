@@ -1,3 +1,5 @@
+# spring-cloud-config-server-mongodb is no longer actively maintained by VMware, Inc.
+
 # Spring Cloud Config Server MongoDB
 
 [![build-status](https://travis-ci.org/spring-cloud-incubator/spring-cloud-config-server-mongodb.svg?branch=master)](https://travis-ci.org/spring-cloud-incubator/spring-cloud-config-server-mongodb)
